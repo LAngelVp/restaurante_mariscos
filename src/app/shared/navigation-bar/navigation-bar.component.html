@@ -1,0 +1,17 @@
+<div class="nav navbar-expand-lg bg-info position-fixed w-100 z-3">
+    <div class="container navbar">
+        <h1 class=" navbar-brand m-0 p-0 segundo-slogan fw-bold">
+            Olas del
+            <span class="">
+                Mar
+            </span>
+        </h1>
+        <ul class="nav">
+            <li *ngFor="let opcion of listaOpciones" class=" nav-link">
+                <a class="nav-link p-0 m-0 text-white subtitulo fs-4">
+                    {{opcion.nombre}}
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
