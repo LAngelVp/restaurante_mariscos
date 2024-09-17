@@ -2,13 +2,16 @@
 .paralax
     display: flex
     background-image: url('../../../assets/images/fondo_peces_movil.jpg')
-    background-attachment: fixed
+    background-attachment: scroll
     background-position: center
     background-size: cover
     background-repeat: no-repeat
     position: relative
     width: 100%
     min-height: 400px
+    @media (min-width: 768px)
+        background-attachment: fixed
+    
 .contenedor-titulo
     width: 100%
     display: flex
