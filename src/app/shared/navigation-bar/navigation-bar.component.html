@@ -1,17 +1,23 @@
-<div class="nav navbar-expand-lg bg-info position-fixed w-100 z-3">
-    <div class="container navbar">
+<div class="nav navbar-expand-md bg-info position-fixed w-100 barra-navegacion">
+    <div class="container navbar px-2 p-lg-0">
         <h1 class=" navbar-brand m-0 p-0 segundo-slogan fw-bold">
             Olas del
             <span class="">
                 Mar
             </span>
         </h1>
-        <ul class="nav">
-            <li *ngFor="let opcion of listaOpciones" class=" nav-link">
-                <a class="nav-link p-0 m-0 text-white subtitulo fs-4">
-                    {{opcion.nombre}}
-                </a>
-            </li>
-        </ul>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#barraNavegacion"
+            aria-controls="barraNavegacion" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="barraNavegacion">
+            <ul class="navbar-nav gap-3">
+                <li *ngFor="let opcion of listaOpciones" class="nav-item">
+                    <a class="nav-link p-0 m-0 text-white subtitulo fs-4">
+                        {{opcion.nombre}}
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>

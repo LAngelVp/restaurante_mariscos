@@ -1,0 +1,35 @@
+<div class="container-fluid py-5 paralax flex-column">
+    <div class="container pb-5">
+        <div class="contenedor-titulo">
+            <h2 class="subtitulo m-0 text-white">Reseñas de clientes</h2>
+        </div>
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+                <ng-container *ngFor="let grupo of grupoComentarios; let i = index">
+                    <div class="carousel-item" [class.active]="i === 0">
+                        <div class="d-flex">
+                            <div *ngFor="let comentario of grupo" class="card flex-fill mx-2">
+                                <div class="card-header">
+                                    <h3>{{ comentario.nombre }}</h3>
+                                </div>
+                                <div class="card-body">
+                                    <blockquote class="blockquote m-0">
+                                        <span>{{ comentario.comentario }}</span>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+            <button class="carousel-control-prev " type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon btn_pass rounded-circle" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon btn_pass rounded-circle" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</div>
