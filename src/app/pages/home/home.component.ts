@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { HistoryComponent } from "../../components/history/history.component";
 import { MissionandvisionComponent } from "../../components/missionandvision/missionandvision.component";
 import { SpecialDishesComponent } from "../../components/special-dishes/special-dishes.component";
@@ -13,6 +13,14 @@ import { ImageGaleryComponent } from "../../components/image-galery/image-galery
   templateUrl: './home.component.html',
   styleUrl: './home.component.sass'
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit {
+  @ViewChild('video') videoPlay!: ElementRef<HTMLVideoElement>
 
+  ngAfterViewInit(): void {
+    const video : HTMLVideoElement = this.videoPlay.nativeElement;
+
+    video.autoplay = true;
+    video.loop = true;
+    video.muted = true;
+  }
 }
