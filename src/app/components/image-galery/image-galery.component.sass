@@ -1,0 +1,58 @@
+@import '../../../styles.sass'
+// Variables
+$transition-duration: 0.3s
+$border-radius: 8px
+$overlay-color: rgba(0, 0, 0, 0.4)
+$overlay-text-color: #fff
+$overlay-text-size: 1.2em
+
+// Contenedor de la galería
+.galeria
+    .fila
+        display: flex
+        flex-wrap: wrap
+        margin: -10px // Para ajustar el espaciado entre elementos
+
+    .item-galeria
+        position: relative
+        overflow: hidden
+        margin: 10px
+        border-radius: $border-radius
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+        transition: transform $transition-duration ease, box-shadow $transition-duration ease
+        flex: 1 1 calc(33.333% - 20px) // Tres columnas con margen
+
+        img
+            width: 100%
+            height: auto
+            display: block
+            transition: transform $transition-duration ease
+
+        &:hover
+            img
+                transform: scale(1.05)
+
+            .superposicion
+                opacity: 1
+                transform: translateY(0)
+
+        .superposicion
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background: $overlay-color
+            opacity: 0
+            transition: opacity $transition-duration ease, transform $transition-duration ease
+            display: flex
+            align-items: center
+            justify-content: center
+            transform: translateY(100%) // Oculta la superposición por defecto
+
+            .texto-superposicion
+                color: $overlay-text-color
+                font-size: $overlay-text-size
+                text-align: center
+                padding: 10px
+                border-radius: $border-radius
