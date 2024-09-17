@@ -14,7 +14,7 @@ import { ImageGaleryComponent } from "../../components/image-galery/image-galery
   styleUrl: './home.component.sass'
 })
 export class HomeComponent implements AfterViewInit {
-  @ViewChild('video') videoPlay!: ElementRef<HTMLVideoElement>
+  @ViewChild('videoP') videoPlay!: ElementRef<HTMLVideoElement>
 
   ngAfterViewInit(): void {
     const video : HTMLVideoElement = this.videoPlay.nativeElement;
