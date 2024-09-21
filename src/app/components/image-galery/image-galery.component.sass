@@ -10,12 +10,14 @@ $overlay-text-size: 1.2em
 .galeria
     .fila
         display: flex
+        
         flex-wrap: wrap
         margin: -10px // Para ajustar el espaciado entre elementos
 
     .item-galeria
         position: relative
         overflow: hidden
+        min-width: 10rem
         margin: 10px
         border-radius: $border-radius
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
@@ -23,6 +25,7 @@ $overlay-text-size: 1.2em
         flex: 1 1 calc(33.333% - 20px) // Tres columnas con margen
 
         img
+            
             width: 100%
             height: auto
             display: block

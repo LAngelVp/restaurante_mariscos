@@ -1,5 +1,5 @@
 <div class="container-fluid d-flex gap-3 justify-content-center">
-    <div class="container">
+    <div class="">
         <h2 class="subtitulo fs-3 my-4">
             Especialidades
         </h2>
@@ -7,7 +7,7 @@
             <div class="card" *ngFor="let especialidad of listaEspecialidades">
                 <img [src]="especialidad.imagen" alt="" class="card-img-top img-fluid">
                 <div class="card-body">
-                    <h2 class="subtitulo">
+                    <h2 class="subtitulo text-wrap">
                         {{especialidad.nombre}}
                     </h2>
                     <cite class="contenido">

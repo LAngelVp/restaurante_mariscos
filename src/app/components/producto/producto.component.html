@@ -1,0 +1,26 @@
+<div class="container-fluid d-flex gap-3 justify-content-center">
+    <div class="">
+        <h2 class="subtitulo fs-3 mb-4">
+            Platillos
+        </h2>
+        <div class="contenedor-card gap-3">
+            <div class="card" *ngFor="let platillo of listaPlatillos">
+                <img [src]="platillo.imagen" alt="" class="card-img-top img-fluid">
+                <div class="card-body">
+                    <h2 class="subtitulo">
+                        {{platillo.nombre}}
+                    </h2>
+                    <p>
+                        Precio: 
+                        <span>
+                            {{platillo.precio |  currency: 'USD': 'symbol': '1.00' }}
+                        </span>
+                    </p>
+                    <cite class="contenido">
+                        {{platillo.descripcion}}
+                    </cite>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

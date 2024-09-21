@@ -10,12 +10,21 @@
             aria-controls="barraNavegacion" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-end" id="barraNavegacion">
+        <div class="collapse navbar-collapse justify-content-end" id="barraNavegacion" #barra_navegacion>
             <ul class="navbar-nav gap-3">
                 <li *ngFor="let opcion of listaOpciones" class="nav-item">
-                    <a class="nav-link p-0 m-0 text-white subtitulo fs-4">
+                    <a
+                    *ngIf="opcion.nombre === 'Contacto'; else otherLinks"
+                    (click)="scrollToBottom()"
+                    class="nav-link p-0 m-0 text-white subtitulo fs-4">
                         {{opcion.nombre}}
                     </a>
+                    <ng-template #otherLinks>
+                        <a  [routerLink]="opcion.path"
+                        class="nav-link p-0 m-0 text-white subtitulo fs-4">
+                            {{opcion.nombre}}
+                        </a>
+                    </ng-template>
                 </li>
             </ul>
         </div>
